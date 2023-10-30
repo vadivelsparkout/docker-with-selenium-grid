@@ -1,0 +1,42 @@
+command
+
+docker -v
+
+1.docker - print whole command
+
+2.sudo docker pull imagename- pull latest tag
+   a.docker pull imagename:tag-pull the image related to tag
+   b.docker pull authorname/imagename:tag - pull the image w/r author and tag
+   
+3.sudo docker container create webdriverio/selenium-standalone:latest-create container through image-print container id
+
+4.sudo docker container start containerid- start the container
+
+5. sudo docker container ps- give container related info with port info(running)
+
+6.sudo docker stop container id or name- stop the container
+
+7.sudo docker container ps -a   ->show info about all container
+
+8. sudo docker container rm container id or name- remove the container
+
+9.(pull+create+start=run) -->sudo docker container run -d -p 4444:4444 --name leo webdriverio/selenium-standalone  --->(-d -logs in background when listening mode)(-p 4444:4444 --port maping)( --name leo --naming the container)
+
+10.sudo docker container logs name or conatiner id -->see the logs
+
+11.sudo docker images - show al the download images
+
+12.sudo docker rmi id - remove the image
+
+13.sudo docker exec -ti containerid /bin/bash - go into container cmd
+
+14.ls - show folders in that container
+
+15.cat- inside file
+
+16.cd .. -back
+
+17. sudo echo $PATH - Variable
+
+18.sudo docker images -f "reference=selenium/*:118.0" - filtering images
+
