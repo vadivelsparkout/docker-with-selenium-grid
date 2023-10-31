@@ -40,3 +40,23 @@ docker -v
 
 18.sudo docker images -f "reference=selenium/*:118.0" - filtering images
 
+
+restart policy 
+
+a.No
+b.Always
+c.On-failure-[:retry]
+d.unless-stopped
+
+1.sudo docker run -ti --restart on-failure:4 busybox:latest
+
+2.sudo docker inspect container id or name - check json restart policy
+
+3. sudo docker update --restart on-failure:2 container id or name- update the restart policy
+
+
+
+
+
+
+

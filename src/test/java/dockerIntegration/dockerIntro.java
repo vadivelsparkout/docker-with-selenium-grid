@@ -8,12 +8,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class dockerIntro {
 		
-		@Test(priority = 1)
-		void firstTest () throws MalformedURLException {
+		@Test(dataProvider ="getdata")
+		void firstTest (String browser,String version) throws MalformedURLException {
 			
 	    ChromeOptions options = new ChromeOptions();
 			  
@@ -21,9 +22,11 @@ public class dockerIntro {
 			
 		DesiredCapabilities cap=new DesiredCapabilities();
 		
-		cap.setBrowserName("chrome");
+		cap.setBrowserName(browser);
 		
 		cap.setPlatform(Platform.LINUX);
+		
+		cap.setVersion(version);
 		
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		
@@ -43,35 +46,14 @@ public class dockerIntro {
 			
 	}
 		
-        @Test(priority = 2)
-		void secondTest () throws MalformedURLException {
-			
-	    FirefoxOptions options = new FirefoxOptions();
-			  
-		options.addArguments("--no-sandbox");
-			
-		DesiredCapabilities cap=new DesiredCapabilities();
+	@DataProvider(parallel = true)	
+	
+     public Object[][] getdata(){
 		
-		cap.setBrowserName("firefox");
-		
-		cap.setPlatform(Platform.LINUX);
-		
-		cap.setCapability(ChromeOptions.CAPABILITY, options);
-		
-		//System.setProperty("webdriver.chrome.silentOutput", "true");
-
-		//System.setProperty("webdriver.http.factory", "jdk-http-client");
-		
-		WebDriver driver=new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"), cap);
-		
-		driver.get("https://www.google.co.uk/");
-		
-		System.out.println("title :"+driver.getTitle());
-		
-		System.out.println("docker intro");
-		
-		driver.quit();
-			
-	}
+		return new Object[][]
+				
+				{{"chrome","118.1.12.1"},{"firefox","88.1"}};
+    	 
+     }
 		
 }
