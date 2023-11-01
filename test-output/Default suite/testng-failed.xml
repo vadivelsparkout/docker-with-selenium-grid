@@ -5,7 +5,7 @@
     <classes>
       <class name="dockerIntegration.dockerIntro">
         <methods>
-          <include name="firstTest" invocation-numbers="0 1"/>
+          <include name="firstTest" invocation-numbers="1"/>
         </methods>
       </class> <!-- dockerIntegration.dockerIntro -->
     </classes>

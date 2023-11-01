@@ -14,7 +14,8 @@ import org.testng.annotations.Test;
 public class dockerIntro {
 		
 		@Test(dataProvider ="getdata")
-		void firstTest (String browser,String version) throws MalformedURLException {
+		
+		void firstTest (String browser) throws MalformedURLException {
 			
 	    ChromeOptions options = new ChromeOptions();
 			  
@@ -26,7 +27,7 @@ public class dockerIntro {
 		
 		cap.setPlatform(Platform.LINUX);
 		
-		cap.setVersion(version);
+		//cap.setVersion(version);
 		
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		
@@ -34,7 +35,7 @@ public class dockerIntro {
 
 		//System.setProperty("webdriver.http.factory", "jdk-http-client");
 		
-		WebDriver driver=new RemoteWebDriver(new URL("http://172.17.0.2:4444/wd/hub"), cap);
+		WebDriver driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		
 		driver.get("https://www.google.co.uk/");
 		
@@ -52,7 +53,7 @@ public class dockerIntro {
 		
 		return new Object[][]
 				
-				{{"chrome","118.1.12.1"},{"firefox","88.1"}};
+				{{"chrome"},{"firefox"}};
     	 
      }
 		

@@ -1,34 +1,70 @@
 #to execute docker yml file run "docker-compose -f <filename> up"
 #add -d to the end to detach execution
 
-version: "3.9"
+version: "3"
+
 services:
-     selenium-hub:
-     image: selenium/hub:latest
-     container_name: selenium hub
-     restart: always
-     poprts:
-     - "4444:4444"  #for multiple values
+
+   selenium-hub:
      
-     chrome:
+     image: selenium/hub:latest
+     
+     container_name: selenium-hub
+     
+     restart: always
+     
+     ports:
+     
+     - "4442:4442"
+     
+     - "4443:4443"
+     
+     - "4444:4444"
+       #for multiple values
+     
+   chrome:
+   
      image: selenium/node-chrome:latest
+     
      volumes: 
-     - dev/shm:/dev/shm
-     depends_on: selenium hub
-     envoirnment:
-     - HUB_HOST=selenium hub
-     - HUB_PORT=4444
+     
+     - /dev/shm:/dev/shm
+     
+     depends_on: 
+     
+     - selenium-hub
+     
+     environment:
+     
+     - SE_EVENT_BUS_HOST=selenium-hub
+     
+     - SE_EVENT_BUS_PUBLISH_PORT=4442
+     
+     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+     
      restart: on-failure:3
      
       
-     firefox:
+   firefox:
+   
      image: selenium/node-firefox:latest
+     
      volumes: 
-     - dev/shm:/dev/shm
-     depends_on: selenium hub
-     envoirnment:
-     - HUB_HOST=selenium hub
-     - HUB_PORT=4444
+     
+     - /dev/shm:/dev/shm
+     
+     depends_on: 
+     
+     - selenium-hub
+     
+     environment:
+     
+     - SE_EVENT_BUS_HOST=selenium-hub
+     
+     - SE_EVENT_BUS_PUBLISH_PORT=4442
+     
+     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+     
      restart: on-failure:3
      
      

@@ -55,6 +55,20 @@ d.unless-stopped
 3. sudo docker update --restart on-failure:2 container id or name- update the restart policy
 
 
+docker compose yaml file
+
+1.cd path of the yaml file
+
+2.sudo docker compose up
+
+3.sudo docker compose down
+
+4.socker docker compose ps - compose up file
+
+5.sudo docker-compose scale chrome=5  --creating multiple chrome or firefoc (scale up)
+
+
+
 
 
 
