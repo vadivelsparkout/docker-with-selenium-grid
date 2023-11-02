@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-01T11:39:40 IST" name="Default suite" finished-at="2023-11-01T11:39:47 IST" duration-ms="7700">
+  <suite started-at="2023-11-02T12:35:26 IST" name="Default suite" finished-at="2023-11-02T12:35:59 IST" duration-ms="33196">
     <groups>
     </groups>
-    <test started-at="2023-11-01T11:39:40 IST" name="Default test" finished-at="2023-11-01T11:39:47 IST" duration-ms="7700">
+    <test started-at="2023-11-02T12:35:26 IST" name="Default test" finished-at="2023-11-02T12:35:59 IST" duration-ms="33196">
       <class name="dockerIntegration.dockerIntro">
-        <test-method signature="firstTest(java.lang.String)[pri:0, instance:dockerIntegration.dockerIntro@459e9125]" started-at="2023-11-01T11:39:40 IST" name="firstTest" data-provider="getdata" finished-at="2023-11-01T11:39:47 IST" duration-ms="7592" status="PASS">
+        <test-method signature="firstTest(java.lang.String)[pri:0, instance:dockerIntegration.dockerIntro@459e9125]" started-at="2023-11-02T12:35:26 IST" name="firstTest" data-provider="getdata" finished-at="2023-11-02T12:35:59 IST" duration-ms="32892" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firstTest -->
-        <test-method signature="firstTest(java.lang.String)[pri:0, instance:dockerIntegration.dockerIntro@459e9125]" started-at="2023-11-01T11:39:40 IST" name="firstTest" data-provider="getdata" finished-at="2023-11-01T11:39:45 IST" duration-ms="5043" status="PASS">
+        <test-method signature="firstTest(java.lang.String)[pri:0, instance:dockerIntegration.dockerIntro@459e9125]" started-at="2023-11-02T12:35:26 IST" name="firstTest" data-provider="getdata" finished-at="2023-11-02T12:35:47 IST" duration-ms="20217" status="PASS">
           <params>
             <param index="0">
               <value>

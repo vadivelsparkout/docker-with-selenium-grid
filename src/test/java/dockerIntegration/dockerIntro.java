@@ -15,7 +15,7 @@ public class dockerIntro {
 		
 		@Test(dataProvider ="getdata")
 		
-		void firstTest (String browser) throws MalformedURLException {
+		void firstTest (String browser) throws MalformedURLException, InterruptedException {
 			
 	    ChromeOptions options = new ChromeOptions();
 			  
@@ -31,10 +31,6 @@ public class dockerIntro {
 		
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		
-		//System.setProperty("webdriver.chrome.silentOutput", "true");
-
-		//System.setProperty("webdriver.http.factory", "jdk-http-client");
-		
 		WebDriver driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		
 		driver.get("https://www.google.co.uk/");
@@ -42,6 +38,8 @@ public class dockerIntro {
 		System.out.println("title :"+driver.getTitle());
 		
 		System.out.println("docker intro");
+		
+		Thread.sleep(10000);
 		
 		driver.quit();
 			

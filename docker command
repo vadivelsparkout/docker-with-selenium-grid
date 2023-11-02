@@ -28,7 +28,8 @@ docker -v
 
 12.sudo docker rmi id - remove the image
 
-13.sudo docker exec -ti containerid /bin/bash - go into container cmd
+13.sudo docker exec -ti containerid /bin/bash - go into container cmd opt file  - to selenium
+ Config.json
 
 14.ls - show folders in that container
 
